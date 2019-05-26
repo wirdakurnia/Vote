@@ -4,6 +4,7 @@ import android.content.Intent;
 import android.os.Bundle;
 import android.support.annotation.NonNull;
 import android.support.v7.app.AppCompatActivity;
+import android.text.TextUtils;
 import android.util.Log;
 import android.view.View;
 import android.widget.EditText;
@@ -27,6 +28,11 @@ public class LoginActivity extends AppCompatActivity {
         txt_password = findViewById(R.id.password);
         firebaseAuth = FirebaseAuth.getInstance();
 
+        if (firebaseAuth.getCurrentUser() != null) {
+            startActivity(new Intent(LoginActivity.this, MainActivity.class));
+            finish();
+        }
+
     }
 
     public void btn_reg(View view) {
@@ -35,14 +41,28 @@ public class LoginActivity extends AppCompatActivity {
     }
 
     public void btnuserlog(View v){
-        (firebaseAuth.signInWithEmailAndPassword(txt_email.getText().toString(), txt_password.getText().toString())).addOnCompleteListener(new OnCompleteListener<AuthResult>() {
+        String email = txt_email.getText().toString();
+        final String password = txt_password.getText().toString();
+
+        if (TextUtils.isEmpty(email)) {
+            Toast.makeText(getApplicationContext(), "Masukkan Email", Toast.LENGTH_SHORT).show();
+            return;
+        }
+
+        if (TextUtils.isEmpty(password)) {
+            Toast.makeText(getApplicationContext(), "Masukkan password!", Toast.LENGTH_SHORT).show();
+            return;
+        }
+
+        (firebaseAuth.signInWithEmailAndPassword(email, password)).addOnCompleteListener(new OnCompleteListener<AuthResult>() {
             @Override
             public void onComplete(@NonNull Task<AuthResult> task) {
                 if(task.isSuccessful()) {
                     Toast.makeText(LoginActivity.this,"Login successful",Toast.LENGTH_LONG).show();
                     Intent i = new Intent(LoginActivity.this, MainActivity.class);
-                    i.putExtra("Email", firebaseAuth.getCurrentUser().getEmail());
+                    //i.putExtra("Email", firebaseAuth.getCurrentUser().getEmail());
                     startActivity(i);
+                    finish();
                 }
                 else{
                     Log.e("Error", task.getException().toString());
