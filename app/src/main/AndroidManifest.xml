@@ -24,7 +24,12 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-        <activity android:name=".MainActivity"></activity>
+        <activity android:name=".product.MainActivity"
+            android:label="Idol Showcase"
+            android:screenOrientation="portrait"></activity>
+        <activity android:name=".reviews.ReviewActivity"
+            android:label="Review Showcase"
+            android:screenOrientation="portrait"/>
     </application>
 
 </manifest>
