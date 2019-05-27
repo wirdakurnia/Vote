@@ -24,7 +24,16 @@
                 android:gravity="center"
                 android:textSize="18sp"
                 android:textStyle="bold"
-                tools:text="Product Name"/>
+                tools:text="Idol Name"/>
+
+            <TextView
+                android:id="@+id/tv_agensi"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:gravity="center"
+                android:textSize="14sp"
+                tools:text="Agensi"/>
 
             <me.zhanghai.android.materialratingbar.MaterialRatingBar
                 android:id="@+id/total_star_rating"
@@ -44,6 +53,13 @@
                 app:mrb_secondaryProgressTint="@color/colorPrimary" />
 
         </LinearLayout>
+
+        <ImageView
+            android:layout_width="80dp"
+            android:layout_height="80dp"
+            android:layout_marginTop="5dp"
+            android:layout_marginLeft="30dp"
+            android:src="@drawable/logoproduce"/>
     </android.support.v7.widget.CardView>
 
 </LinearLayout>

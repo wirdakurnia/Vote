@@ -48,5 +48,7 @@ dependencies {
     implementation "com.google.firebase:firebase-firestore:19.0.0"
 
     implementation 'com.google.code.gson:gson:2.8.2'
+
+    implementation 'com.firebaseui:firebase-ui-database:4.0.0'
 }
 apply plugin: 'com.google.gms.google-services'

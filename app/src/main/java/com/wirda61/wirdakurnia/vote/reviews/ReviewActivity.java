@@ -163,6 +163,7 @@ public class ReviewActivity extends AppCompatActivity {
         final IdolModel rate = new IdolModel();
         rate.setIdIdol(idolModel.getIdIdol());
         rate.setNameIdol(idolModel.getNameIdol());
+        rate.setAgensi(idolModel.getAgensi());
 
         //update stars
         double totalStars;

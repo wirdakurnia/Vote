@@ -1,5 +1,6 @@
 package com.wirda61.wirdakurnia.vote.reviews;
 
+import android.content.SharedPreferences;
 import android.support.annotation.NonNull;
 import android.support.v7.widget.RecyclerView;
 import android.view.LayoutInflater;
@@ -14,6 +15,8 @@ import java.util.List;
 import butterknife.BindView;
 import butterknife.ButterKnife;
 
+import static android.content.Context.MODE_PRIVATE;
+
 
 public class ReviewAdapter extends RecyclerView.Adapter<ReviewAdapter.ReviewViewHolder> {
 
@@ -26,12 +29,14 @@ public class ReviewAdapter extends RecyclerView.Adapter<ReviewAdapter.ReviewView
     @NonNull
     @Override
     public ReviewViewHolder onCreateViewHolder(@NonNull ViewGroup parent, int viewType) {
+
         View view = LayoutInflater.from(parent.getContext()).inflate(R.layout.item_review, parent, false);
         return new ReviewViewHolder(view);
     }
 
     @Override
     public void onBindViewHolder(@NonNull ReviewViewHolder holder, int position) {
+
         ReviewModel model = listReview.get(position);
         holder.tvDescReview.setText(model.getReview());
         holder.tvNamaPasien.setText(model.getName());

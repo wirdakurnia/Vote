@@ -44,6 +44,7 @@ public class IdolAdapter extends RecyclerView.Adapter<IdolAdapter.IdolHolder> {
 
         holder.totalStarRating.setRating(Float.parseFloat(String.valueOf(model.getTotalRating())));
         holder.tvIdolName.setText(model.getNameIdol());
+        holder.tvAgensi.setText(model.getAgensi());
         holder.cvItem.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -68,6 +69,8 @@ public class IdolAdapter extends RecyclerView.Adapter<IdolAdapter.IdolHolder> {
 
         @BindView(R.id.tv_idol_name)
         TextView tvIdolName;
+        @BindView(R.id.tv_agensi)
+        TextView tvAgensi;
         @BindView(R.id.total_star_rating)
         MaterialRatingBar totalStarRating;
         @BindView(R.id.cv_item)

@@ -10,8 +10,9 @@ public class IdolModel {
     private int star4;
     private int star5;
     private String nameIdol;
+    private String agensi;
 
-    public IdolModel(int totalVoters, double totalRating, int star1, int star2, int star3, int star4, int star5, String nameIdol) {
+    public IdolModel(int totalVoters, double totalRating, int star1, int star2, int star3, int star4, int star5, String nameIdol, String agensi) {
         this.totalVoters = totalVoters;
         this.totalRating = totalRating;
         this.star1 = star1;
@@ -20,9 +21,18 @@ public class IdolModel {
         this.star4 = star4;
         this.star5 = star5;
         this.nameIdol = nameIdol;
+        this.agensi = agensi;
     }
 
     public IdolModel() {
+    }
+
+    public String getAgensi() {
+        return agensi;
+    }
+
+    public void setAgensi(String agensi) {
+        this.agensi = agensi;
     }
 
     public String getNameIdol() {
