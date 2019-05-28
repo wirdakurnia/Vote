@@ -7,6 +7,7 @@ import android.os.Bundle;
 import android.util.Log;
 import android.view.View;
 import android.widget.EditText;
+import android.widget.TextView;
 import android.widget.Toast;
 
 import com.google.android.gms.tasks.OnCompleteListener;
@@ -16,6 +17,7 @@ import com.google.firebase.auth.FirebaseAuth;
 
 public class RegisterActivity extends AppCompatActivity {
     private EditText txt_email, txt_password;
+    private TextView txt_login;
     private FirebaseAuth firebaseAuth;
 
     @Override
@@ -25,7 +27,16 @@ public class RegisterActivity extends AppCompatActivity {
 
         txt_email = findViewById(R.id.txt_email);
         txt_password = findViewById(R.id.txt_password);
+        txt_login = findViewById(R.id.link_login);
         firebaseAuth = FirebaseAuth.getInstance();
+
+        txt_login.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent i = new Intent(RegisterActivity.this, LoginActivity.class);
+                startActivity(i);
+            }
+        });
     }
 
     public void btnuserreg(View v){

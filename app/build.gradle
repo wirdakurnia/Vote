@@ -50,5 +50,10 @@ dependencies {
     implementation 'com.google.code.gson:gson:2.8.2'
 
     implementation 'com.firebaseui:firebase-ui-database:4.0.0'
+
+    //noinspection GradleCompatible
+    implementation 'com.google.firebase:firebase-messaging:18.0.0'
+    implementation 'com.firebaseui:firebase-ui:4.0.0'
+    implementation 'com.google.gms:google-services:4.2.0'
 }
 apply plugin: 'com.google.gms.google-services'

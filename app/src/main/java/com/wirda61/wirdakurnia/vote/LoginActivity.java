@@ -1,7 +1,6 @@
 package com.wirda61.wirdakurnia.vote;
 
 import android.content.Intent;
-import android.content.SharedPreferences;
 import android.os.Bundle;
 import android.support.annotation.NonNull;
 import android.support.v7.app.AppCompatActivity;
@@ -32,8 +31,6 @@ public class LoginActivity extends AppCompatActivity {
 
         if (firebaseAuth.getCurrentUser() != null) {
             startActivity(new Intent(LoginActivity.this, MainActivity.class));
-            SharedPreferences prefs = getSharedPreferences("MyApp", MODE_PRIVATE);
-            prefs.edit().putString("USERNAME", txt_email.getText().toString().trim()).apply();
             finish();
         }
 
